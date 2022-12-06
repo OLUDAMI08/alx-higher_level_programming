@@ -11,4 +11,3 @@ def no_c(my_string):
         my_string_nw += my_string[i]
 
     return my_string_nw
-
