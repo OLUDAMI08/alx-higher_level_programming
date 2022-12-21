@@ -2,7 +2,7 @@
 
 class Square:
     """A square class"""
-    def __init__(self, size):
+    def __init__(self, size=0):
         """initializing square class
         Args:
             size(int): represent the size of the square defined
@@ -20,7 +20,7 @@ class Square:
 
     @size.setter
     def size(self, value):
-        if not isinstance(size, size):
+        if not isinstance(value, int):
             raise TypeError("ize must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
@@ -28,4 +28,4 @@ class Square:
     def area(self):
         """area of square"""
 
-        return (self__size * self__self)
+        return (self__size * self__size)
