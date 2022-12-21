@@ -3,9 +3,9 @@
 """class that define a square"""
 
 class Square:
-    """Define a class square"""
+    """A class that represent a square"""
 
-    def __init___(self, size=0):
+    def __init__(self, size=0):
 
         """initializing a class
 
