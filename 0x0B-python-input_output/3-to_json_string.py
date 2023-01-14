@@ -6,4 +6,4 @@ representation of an object (string)
 def to_json_string(my_obj):
     """function that accept an argument"""
 
-    return json.dumps(my_obj)
+    return json.dump(my_obj)
