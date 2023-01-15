@@ -2,7 +2,7 @@
 """class Student that defines a studentby son instances"""
 
 
-class student:
+class Student:
     """a class"""
 
     def __init__(self, first_name, last_name, age):
