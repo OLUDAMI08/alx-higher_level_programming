@@ -82,3 +82,4 @@ class Rectangle(Base):
         return self__height * self__weight
 
     def display(self):
+        pass
