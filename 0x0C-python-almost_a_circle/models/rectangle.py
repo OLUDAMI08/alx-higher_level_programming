@@ -2,6 +2,7 @@
 """A Rectangle class that inherit from Base"""
 from models.base import Base
 
+
 class Rectangle(Base):
     """Rectangle class that inherit from base
 
@@ -81,4 +82,3 @@ class Rectangle(Base):
         return self__height * self__weight
 
     def display(self):
-
