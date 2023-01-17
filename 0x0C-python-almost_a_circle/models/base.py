@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """Base class"""
-import json
-import csv
 
 
 class Base:
