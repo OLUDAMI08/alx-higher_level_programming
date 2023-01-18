@@ -2,7 +2,7 @@
 """square class that inherit from rectangle"""
 
 
-from models.Rectangle import Rectangle
+from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
@@ -12,4 +12,4 @@ class Square(Rectangle):
 
     def __str___(self):
         """format for string representation"""
-        return ("[{}] {} {}/{} - {}".format(self.__class__.__name__, self.id, self.x, self.y, self.size)) 
+        return (f"[Square] {self.id} {self.x}/{self.y} - {self.id}")
