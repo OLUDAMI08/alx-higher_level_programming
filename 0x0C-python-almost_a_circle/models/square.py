@@ -32,25 +32,13 @@ class Square(Rectangle):
     def update(self, *args, **kwargs):
         """update attribute of the instance"""
 
-        """if args and len(args) != 0:
-            self.id = args[0]
-            self.size = args[1]
-            self.x = args[2]
-            self.y = args[3]
-        else:
-            for key, value in kwargs.items():
-                setattr(self, key, value)
-        """
-        if len(kwargs) != 0:
-            for k, v in kwargs.items():
-                setattr(self, k, v)
-            elif len(args) != 0:
-                try:
-                    self.id = args[0]
-                    self.size = args[1]
-                    self.x = args[2]
-                    self.y = args[3]
-                except IndexError:
-                    pass
+            attributes = ["id", "size", "x", "y"]
+            if args and len(args) != 0:
+                i = 0
+                for arg in args:
+                    setattr(self, attributes[i], arg)
+                    i +=1
+
             else:
-                print()
+                for key, value in kwargs.items():
+                    setattr(self, key, value)
