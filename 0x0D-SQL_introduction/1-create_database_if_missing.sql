@@ -3,3 +3,4 @@
 -- You are not allowed to use the SELECT or SHOW statements
 
 CREATE DATABSE IF NOT EXISTS hbtn_0c_0;
+
