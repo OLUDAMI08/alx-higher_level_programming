@@ -10,7 +10,7 @@ if __name__ == "__main__":
     running on localhost at port 3306"""
     db_connect = MySQLdb.connect(host="localhost", port=3306,
                                  user=sys.argv[1], passwd=sys.argv[2],
-                                 db=sys.argv[3], state_name[4])
+                                 db=sys.argv[3], state_name=sys.argv[4])
     """ Prepare a cursor object"""
     db_cursor = db_connect.cursor()
 
