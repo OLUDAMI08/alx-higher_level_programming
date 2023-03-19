@@ -6,14 +6,11 @@ import sys
 import MySQLdb
 
 if __name__ == "__main__":
-    """ get the command line argument """
-    username = sys.argv[1]
-    password = sys.argv[2]
-    db_name = sys.argv[3]
-
-    """Connect to the MySQL server running on localhost at port 3306"""
+    """ get the command line argument and Connect to the MySQL server
+    running on localhost at port 3306"""
     db_connect = MySQLdb.connect(host="localhost", port=3306,
-                                 user=username, passwd=password, db=db_name)
+                                 user=sys.argv[1], passwd=sys.argv[2],
+                                 db=sys.argv[3])
     """ Prepare a cursor object"""
     db_cursor = db_connect.cursor()
 
