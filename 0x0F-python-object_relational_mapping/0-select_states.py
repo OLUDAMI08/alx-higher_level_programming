@@ -6,15 +6,17 @@ import sys
 import MySQLdb
 
 if __name__ == "__main__":
-    """ access the command
-    line argument """
+    """ get the command line argument """
     username = sys.argv[1]
     password = sys.argv[2]
     db_name = sys.argv[3]
 
+    """Connect to the MySQL server running on localhost at port 3306"""
     db_connect = MySQLdb.connect(host="localhost", port=3306,
                                  user=username, passwd=password, db=db_name)
+    """ Prepare a cursor object"""
     db_cursor = db_connect.cursor()
+
     db_cursor.execute("SELECT * FROM states ORDER BY states.id")
     datas_fetched = db_cursor.fetchall()
     for data in datas_fetched:
