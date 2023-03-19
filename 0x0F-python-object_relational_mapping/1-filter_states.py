@@ -14,7 +14,7 @@ if __name__ == "__main__":
     """ Prepare a cursor object"""
     db_cursor = db_connect.cursor()
 
-    db_cursor.execute("SELECT * FROM states WHERE name LIKE 'N%'
+    db_cursor.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%'
                       ORDER BY states.id ASC")
     datas_fetched = db_cursor.fetchall()
     for data in datas_fetched:
