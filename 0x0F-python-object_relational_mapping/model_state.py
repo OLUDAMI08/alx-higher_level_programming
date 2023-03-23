@@ -3,6 +3,7 @@
     Inherits from SQLAlchemy Base and links to the MySQL table states
 """
 
+import sys
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 

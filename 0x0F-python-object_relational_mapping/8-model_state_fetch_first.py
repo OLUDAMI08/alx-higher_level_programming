@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""
-lists all State objects from the database hbtn_0e_6_usa
+"""a script that prints the first State object from the database hbtn_0e_6_usa
 """
 
 import sys
@@ -20,13 +19,13 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Query all State objects from the database and order by states.id
-    states = session.query(State).first()
+    # Query the first State object from the database
+    first_state = session.query(State).first()
 
-    # Print the State objects in the format specified
-    if states:
-        print("{}: {}".format(state.id, state.name))
-    else:
+    # Print the State objects in the format speciified
+    if first_state is None:
         print("Nothing")
+    else:
+        print("{}: {}".format(first_state.id, first_state.name))
 
     session.close()
