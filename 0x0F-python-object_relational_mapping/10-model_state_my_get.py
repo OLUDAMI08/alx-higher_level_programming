@@ -1,31 +1,30 @@
 #!/usr/bin/python3
-""" a script that prints the State object with the name passed as argument
-    from the database hbtn_0e_6_usa. Results must display the states.id
+"""
+This script prints the first State object
+from the database `hbtn_0e_6_usa`.
 """
 
-import sys
+from sys import argv
+from model_state import State, Base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model_state import Base, State
-
 
 if __name__ == "__main__":
-    engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}"
-                           .format(sys.argv[1], sys.argv[2], sys.argv[3]))
+    """
+    Access to the database and get a state
+    from the database.
+    """
 
-    # Create all the tables associated with the Base metadata
-    Base.metadata.create_all(engine)
+    db_url = "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
+        argv[1], argv[2], argv[3])
 
-    # Create a new Session instance bound to the engine we created
+    engine = create_engine(db_url)
     Session = sessionmaker(bind=engine)
+
     session = Session()
 
-    # Query the State object from the database
-    state = session.query(State).filter(State.name == sys.argv[4]).first()
-
-    if state:
-        print(state.id)
+    state = session.query(State).filter(State.name == argv[4]).first()
+    if state is not None:
+        print('{0}'.format(state.id))
     else:
         print("Not found")
-
-    session.close()
