@@ -16,12 +16,16 @@ if __name__ == "__main__":
 
     db_url = "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
         argv[1], argv[2], argv[3])
-
+    
+    #create the engine
     engine = create_engine(db_url)
+
+    #create the session maker
     Session = sessionmaker(bind=engine)
 
     session = Session()
-
+    
+    #query the database
     state = session.query(State).filter(State.id == 2).first()
     state.name = "New Mexico"
     session.commit()
