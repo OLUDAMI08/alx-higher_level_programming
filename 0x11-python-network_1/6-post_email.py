@@ -1,0 +1,17 @@
+#!/usr/bin/python3
+"""script that takes in a URL and an email address,
+sends a POST request to the passed URL with the email
+as a parameter, and finally displays the body of the response.
+requests and sys packages only must be used"""
+
+import requests
+import sys
+
+
+url = sys.argv[1]
+email = sys.argv[2]
+
+payload = {'email': email}
+response = requests.post(url, data=payload)
+
+print(response.text)
